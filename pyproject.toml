@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cross-asset-portfolio-allocation"
+version = "0.1.0"
+description = "Walk-forward MPT and Black-Litterman allocation for cross-asset ETFs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "yfinance>=0.2",
+]
+
+[project.optional-dependencies]
+optimization = ["cvxpy>=1.6"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+portfolio-download = "cross_asset_portfolio.cli:download_main"
+portfolio-backtest = "cross_asset_portfolio.cli:backtest_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

@@ -1,0 +1,23 @@
+# Python environment and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Yahoo Finance data is not committed.
+# Run scripts/download_data.py to create these files locally.
+data/*
+!data/.gitkeep
+
+# Full backtest outputs can be large.
+analysis_outputs/
+
